@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 
 
-from atoms import query_text, parse_to_url_gen, keep_external_url_gen, inc_count
+from atoms import (
+    get_or_query_text,
+    parse_to_url_gen, keep_external_url_gen,
+    inc_count
+)
 
 
 TO_RETURN = None
@@ -18,7 +22,7 @@ def op_url_to_text_q(url_q, text_q, max_count):
 
         url = url_q.get()
         print('Querying', url, '...')
-        text = query_text(url)
+        text = get_or_query_text(url)
         text_q.put(text)
 
 

@@ -32,6 +32,23 @@ def inc_count():
     return count
 
 
+url_text_map = {}
+
+
+def get_or_query_text(url):
+
+    try:
+        text = url_text_map[url]
+        #print('HIIIT')
+        return text
+    except KeyError:
+        pass
+
+    text = query_text(url)
+    url_text_map[url] = text
+    return text
+
+
 if __name__ == '__main__':
 
     print('Testing query_text ...', end=' ')
@@ -53,3 +70,9 @@ if __name__ == '__main__':
     print('Testing inc_counter ...')
     assert inc_count() == 1
     assert inc_count() == 2
+
+    print('Testing get_or_query_text ...', end=' ')
+    url_text_map['hi'] = 'HI'
+    text = get_or_query_text('https://tw.pycon.org')
+    print(repr(text[:40]), end=' ')
+    print(repr(get_or_query_text('hi')))

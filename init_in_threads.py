@@ -15,14 +15,14 @@ def start_in_thread(f, *args, **kwargs):
 
 if __name__ == '__main__':
 
-    max_count = 10
+    max_count = 30
 
     url_q = Queue()
     text_q = Queue()
 
     url_q.put('https://www.python.org/')
 
-    for _ in range(4):
+    for _ in range(10):
         start_in_thread(op_url_to_text_q, url_q, text_q, max_count)
 
     for _ in range(2):
