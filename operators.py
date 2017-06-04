@@ -13,6 +13,7 @@ def op_url_to_text_q(url_q, text_q, max_count):
 
         if inc_count() > max_count:
             text_q.put(TO_RETURN)
+            print('Reach', max_count, '.')
             return
 
         url = url_q.get()

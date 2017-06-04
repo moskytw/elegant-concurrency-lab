@@ -16,7 +16,7 @@ if __name__ == '__main__':
     while True:
 
         if inc_count() > max_count:
-            print('Reach max_count', max_count, '...')
+            print('Reach', max_count, '.')
             break
 
         url = q.popleft()
