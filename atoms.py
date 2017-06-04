@@ -3,7 +3,7 @@
 
 '''The atoms operated by operators.
 
-A function in the atom layer must be concurrency-safe. Which concurrency are
+The functions in the atom layer must be concurrency-safe. Which concurrency is
 depended on the concurrent unit you will use.
 
 Keep concurrency-safe by:
