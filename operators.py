@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
 
-'''The operators which operates atoms and channels.'''
+'''The operators which operates atoms and channels.
+
+The functions in the operator layer should only communicate with each other
+through channel.
+
+'''
 
 
 from atoms import (
