@@ -1,6 +1,21 @@
 #!/usr/bin/env python
 
 
+'''The atoms operated by operators.
+
+A function in the atom layer must be concurrency-safe. Which concurrency are
+depended on the concurrent unit you will use.
+
+Keep concurrency-safe by:
+
+1. Only access the frames in the function.
+2. Leverage the atomic operations.
+3. Redesign with channels.
+4. Use locks – the worst option.
+
+'''
+
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -38,6 +53,7 @@ url_text_map = {}
 def get_or_query_text(url):
 
     try:
+        # read is okay
         text = url_text_map[url]
         #print('HIIIT')
         return text
@@ -45,6 +61,7 @@ def get_or_query_text(url):
         pass
 
     text = query_text(url)
+    # atomic op
     url_text_map[url] = text
     return text
 
