@@ -3,7 +3,7 @@
 
 from collections import deque
 
-from atoms import get_text, parse_to_url_gen, keep_external_url_gen, inc_count
+from atoms import query_text, parse_to_url_gen, keep_external_url_gen, inc_count
 
 
 if __name__ == '__main__':
@@ -20,8 +20,8 @@ if __name__ == '__main__':
             break
 
         url = q.popleft()
-        print('Visiting', url, '...')
-        text = get_text(url)
+        print('Querying', url, '...')
+        text = query_text(url)
 
         print('Parsing ...')
         q.extend(keep_external_url_gen(parse_to_url_gen(text)))

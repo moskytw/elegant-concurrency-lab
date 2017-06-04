@@ -5,8 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-# get: HTTP GET
-def get_text(url):
+def query_text(url):
     return requests.get(url).text
 
 
@@ -35,8 +34,8 @@ def inc_count():
 
 if __name__ == '__main__':
 
-    print('Testing get_text ...', end=' ')
-    text = get_text('https://tw.pycon.org')
+    print('Testing query_text ...', end=' ')
+    text = query_text('https://tw.pycon.org')
     print(repr(text[:40]))
 
     print('Testing parse_to_url_gen ...', end=' ')
