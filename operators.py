@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
 
+'''The operators which operates atoms and channels.'''
+
+
 from atoms import (
     get_or_query_text,
     parse_to_url_gen, keep_external_url_gen,

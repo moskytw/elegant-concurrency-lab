@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
 
+'''Init with threads.'''
+
+
 from threading import Thread
 from queue import Queue
 

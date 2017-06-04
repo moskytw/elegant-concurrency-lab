@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
 
+'''Uses the atoms in the normal way, i.e., the normal way.'''
+
+
 from collections import deque
 
 from atoms import (
