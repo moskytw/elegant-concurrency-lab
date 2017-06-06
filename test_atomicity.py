@@ -1,15 +1,6 @@
 #!/usr/bin/env python
 
 
-''' Test the atomicity.
-
-See
-https://docs.python.org/3/faq/library.html#what-kinds-of-global-value-mutation-are-thread-safe
-for the details.
-
-'''
-
-
 import sys
 from concurrent.futures import ThreadPoolExecutor
 
@@ -36,3 +27,7 @@ if __name__ == '__main__':
 
     print(int_)  # non-atomic
     print(len(list_))  # atomic
+
+    # See
+    # https://docs.python.org/3/faq/library.html#what-kinds-of-global-value-mutation-are-thread-safe
+    # for the details.
