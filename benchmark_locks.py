@@ -46,3 +46,8 @@ if __name__ == '__main__':
 
     expt = timeit(run_with_rlock)
     print(f'Run with rlock    {expt:<06.4}s  {expt/ctrl:<06.4}x')
+
+    # Run with abs      0.4113s  1.0000x
+    # Run with nothing  0.2348s  0.5709x
+    # Run with lock     0.6629s  1.6110x
+    # Run with rlock    0.6630s  1.6120x
