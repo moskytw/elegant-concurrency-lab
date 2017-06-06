@@ -36,13 +36,13 @@ def run_with_rlock():
 if __name__ == '__main__':
 
     ctrl = expt = timeit(run_with_abs)
-    print(f'Run with abs      {expt:.4}s  {expt/ctrl:.4}x')
+    print(f'Run with abs      {expt:<06.4}s  {expt/ctrl:<06.4}x')
 
     expt = timeit(run_with_nothing)
-    print(f'Run with nothing  {expt:.4}s  {expt/ctrl:.4}x')
+    print(f'Run with nothing  {expt:<06.4}s  {expt/ctrl:<06.4}x')
 
     expt = timeit(run_with_lock)
-    print(f'Run with lock     {expt:.4}s  {expt/ctrl:.4}x')
+    print(f'Run with lock     {expt:<06.4}s  {expt/ctrl:<06.4}x')
 
     expt = timeit(run_with_rlock)
-    print(f'Run with rlock    {expt:.4}s  {expt/ctrl:.4}x')
+    print(f'Run with rlock    {expt:<06.4}s  {expt/ctrl:<06.4}x')
