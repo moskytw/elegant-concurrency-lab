@@ -25,7 +25,7 @@ def consume_url_q(url_q):
         print('Queried', len(content), 'bytes from', url)
 
 
-def start_in_thread(f, *args, **kwargs):
+def call_in_thread(f, *args, **kwargs):
     t = Thread(target=f, args=args, kwargs=kwargs)
     t.start()
     return t
@@ -50,4 +50,4 @@ if __name__ == '__main__':
         url_q.put(TO_RETURN)
 
     for _ in range(N):
-        start_in_thread(consume_url_q, url_q)
+        call_in_thread(consume_url_q, url_q)

@@ -11,7 +11,7 @@ from channel_operators import (
 )
 
 
-def start_in_thread(f, *args, **kwargs):
+def call_in_thread(f, *args, **kwargs):
     t = Thread(target=f, args=args, kwargs=kwargs)
     t.start()
     return t
@@ -33,8 +33,8 @@ if __name__ == '__main__':
 
     for _ in range(args[0]):
         # put_text_q: run_q -> run_q, url_q -> text_q
-        start_in_thread(put_text_q, run_q, url_q, text_q)
+        call_in_thread(put_text_q, run_q, url_q, text_q)
 
     for _ in range(args[1]):
         # put_url_q: run_q -> run_q, text_q -> url_q
-        start_in_thread(put_url_q, run_q, text_q, url_q)
+        call_in_thread(put_url_q, run_q, text_q, url_q)

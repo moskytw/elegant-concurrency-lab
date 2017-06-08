@@ -21,7 +21,7 @@ def consume_url_q(url_q):
         url_q.task_done()
 
 
-def start_in_daemon_thread(f, *args, **kwargs):
+def call_in_daemon_thread(f, *args, **kwargs):
     t = Thread(target=f, daemon=True, args=args, kwargs=kwargs)
     t.start()
     return t
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     for _ in range(2):
         # the “daemon” is not the Unix's deamon
         # daemon threads are abruptly stopped at shutdown
-        start_in_daemon_thread(consume_url_q, url_q)
+        call_in_daemon_thread(consume_url_q, url_q)
 
     # block and unblock when all tasks are done
     url_q.join()
