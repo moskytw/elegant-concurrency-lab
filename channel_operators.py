@@ -13,6 +13,7 @@ from atomic_utils import (
 )
 
 
+# https://docs.python.org/3.6/library/logging.html#logrecord-attributes
 logging.basicConfig(
     format=(
         '%(asctime)s\t'
