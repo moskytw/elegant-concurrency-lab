@@ -67,13 +67,13 @@ if __name__ == '__main__':
 
     from time import time
 
-    print('Benchmarking query_text ... ', end='')
+    print('Benchmarking query_text ... ', end='')  # 40x
     s = time()
     text = query_text('https://tw.pycon.org')
     e = time()
     print(f'{e-s:.4}s')
 
-    print('Benchmarking parse_out_href_gen ... ', end='')
+    print('Benchmarking parse_out_href_gen ... ', end='')  # 1x
     s = time()
     list(parse_out_href_gen(text))
     e = time()
