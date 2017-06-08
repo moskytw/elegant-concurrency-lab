@@ -1,10 +1,10 @@
 Elegant Concurrency
 ===================
 
-It's the example code of `PyCon TW 2017 <https://tw.pycon.org/2017/>`_. The
-slides will release after the talk.
+It's the example codes of “Elegant Concurrency” talk in `PyCon TW 2017
+<https://tw.pycon.org/2017/>`_. The slides will release later.
 
-The files are grouped into 3 parts.
+The files are grouped into three parts.
 
 
 Channel-Based Concurrency
@@ -35,4 +35,7 @@ Layered Channel-Based Concurrency
 Others
 ------
 
-Some interesting minor topics.
+Some interesting but minor topics.
+
+
+Have fun!
