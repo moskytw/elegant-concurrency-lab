@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 PYCON_TW_ROOT_URL = 'https://tw.pycon.org/'
 
 
-# conforms accessing only its frame
+# conform accessing only its frame
 
 
 def query_text(url):
@@ -26,7 +26,7 @@ def is_relative_href(url):
     return not url.startswith('http') and not url.startswith('mailto:')
 
 
-# conforms using atomic operators
+# conform using atomic operators
 
 
 url_visted_map = {}
