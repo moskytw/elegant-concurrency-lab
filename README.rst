@@ -38,4 +38,4 @@ Others
 Some interesting but minor topics.
 
 
-Have fun!
+Have fun from 🐢 → ⚡️!
