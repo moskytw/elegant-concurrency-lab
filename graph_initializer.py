@@ -19,15 +19,16 @@ def start_in_thread(f, *args, **kwargs):
 
 if __name__ == '__main__':
 
+    run_q = Queue()
     url_q = Queue()
     text_q = Queue()
 
     init_url_q(url_q)
 
     for _ in range(8):
-        # put_text_q: url_q -> text_q
-        start_in_thread(put_text_q, url_q, text_q)
+        # put_text_q: run_q -> run_q, url_q -> text_q
+        start_in_thread(put_text_q, run_q, url_q, text_q)
 
     for _ in range(4):
-        # put_url_q: text_q -> url_q
-        start_in_thread(put_url_q, text_q, url_q)
+        # put_url_q: run_q -> run_q, text_q -> url_q
+        start_in_thread(put_url_q, run_q, text_q, url_q)
