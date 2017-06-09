@@ -41,12 +41,7 @@ def init_url_q(url_q):
 
 def put_text_q(run_q, url_q, text_q):
 
-    run_q.put(RUNNING)
-
     while True:
-
-        run_q.get()
-        l.info('run_q.get()')
 
         l.info(f'url_q: {url_q.qsize()}')
         url = url_q.get()
@@ -63,15 +58,13 @@ def put_text_q(run_q, url_q, text_q):
         text = query_text(url)
         text_q.put(text)
 
+        run_q.get()
+        l.info('run_q.get()')
+
 
 def put_url_q(run_q, text_q, url_q):
 
-    run_q.put(RUNNING)
-
     while True:
-
-        run_q.get()
-        l.info('run_q.get()')
 
         l.info(f'text_q: {text_q.qsize()}')
         text = text_q.get()
@@ -105,3 +98,6 @@ def put_url_q(run_q, text_q, url_q):
             text_q.put(TO_RETURN)
             l.info('url_q.put(TO_RETURN)')
             l.info('text_q.put(TO_RETURN)')
+
+        run_q.get()
+        l.info('run_q.get()')
