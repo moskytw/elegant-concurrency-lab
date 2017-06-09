@@ -36,8 +36,8 @@ TO_RETURN = ['to_return']
 
 
 def init_url_q(url_q):
-    url_q.put(PYCON_TW_ROOT_URL)
     is_visited_or_mark(PYCON_TW_ROOT_URL)
+    url_q.put(PYCON_TW_ROOT_URL)
 
 
 def put_text_q(run_q, url_q, text_q):
