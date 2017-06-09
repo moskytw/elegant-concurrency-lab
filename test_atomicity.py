@@ -5,6 +5,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 
 
+# in seconds, set smaller to easier test atomicity
 sys.setswitchinterval(10**-6)
 
 
