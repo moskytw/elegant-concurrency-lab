@@ -12,7 +12,7 @@ import requests
 TO_RETURN = ['to_return']
 
 
-def consume_url_q(url_q):
+def consume(url_q):
 
     while True:
 
@@ -50,4 +50,4 @@ if __name__ == '__main__':
         url_q.put(TO_RETURN)
 
     for _ in range(N):
-        call_in_thread(consume_url_q, url_q)
+        call_in_thread(consume, url_q)

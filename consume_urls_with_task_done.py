@@ -8,7 +8,7 @@ from queue import Queue
 import requests
 
 
-def consume_url_q(url_q):
+def consume(url_q):
 
     while True:
 
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     for _ in range(2):
         # the “daemon” is not the Unix's deamon
         # daemon threads are abruptly stopped at shutdown
-        call_in_daemon_thread(consume_url_q, url_q)
+        call_in_daemon_thread(consume, url_q)
 
     # block and unblock when all tasks are done
     url_q.join()
