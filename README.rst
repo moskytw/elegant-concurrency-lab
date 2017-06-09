@@ -1,7 +1,7 @@
 Elegant Concurrency
 ===================
 
-It's the example codes of “Elegant Concurrency” talk in `PyCon TW 2017
+It's the example codes of the “Elegant Concurrency” in `PyCon TW 2017
 <https://tw.pycon.org/2017/>`_. The slides will release later.
 
 The files are grouped into three parts.
