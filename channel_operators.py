@@ -31,7 +31,7 @@ l = logging.getLogger('channel_operators')
 
 
 # make distinguishing and debuggable objects
-RUNNING = ['RUNNING']
+RUNNING = ['running']
 TO_RETURN = ['to_return']
 
 
