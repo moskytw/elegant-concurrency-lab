@@ -25,20 +25,20 @@ if __name__ == '__main__':
     if len(sys.argv) == 3:
         args = (int(sys.argv[1]), int(sys.argv[2]))
 
-    run_q = Queue()
     url_q = Queue()
     text_q = Queue()
+    run_q = Queue()
 
     init_url_q(url_q)
 
     for _ in range(args[0]):
         # put_text_q:
-        #   run_q
         #   url_q -> text_q
-        call_in_thread(put_text_q, run_q, url_q, text_q)
+        #   run_q
+        call_in_thread(put_text_q, url_q, text_q, run_q)
 
     for _ in range(args[1]):
         # put_url_q:
-        #   run_q
         #   text_q -> url_q
-        call_in_thread(put_url_q, run_q, text_q, url_q)
+        #   run_q
+        call_in_thread(put_url_q, text_q, url_q, run_q)

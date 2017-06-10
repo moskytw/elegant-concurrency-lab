@@ -40,7 +40,7 @@ def init_url_q(url_q):
     url_q.put(PYCON_TW_ROOT_URL)
 
 
-def put_text_q(run_q, url_q, text_q):
+def put_text_q(url_q, text_q, run_q):
 
     while True:
 
@@ -66,7 +66,7 @@ def put_text_q(run_q, url_q, text_q):
         l.info('run_q.get()')
 
 
-def put_url_q(run_q, text_q, url_q):
+def put_url_q(text_q, url_q, run_q):
 
     while True:
 
