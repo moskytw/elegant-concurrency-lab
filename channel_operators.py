@@ -95,9 +95,9 @@ def put_url_q(text_q, url_q, run_q):
 
             url_q.put(url)
 
-        l.info(f'run_q: {run_q.qsize()}')
         l.info(f'url_q: {url_q.qsize()}')
-        if run_q.qsize() == 1 and url_q.qsize() == 0:
+        l.info(f'run_q: {run_q.qsize()}')
+        if url_q.qsize() == 0 and run_q.qsize() == 1:
             url_q.put(TO_RETURN)
             text_q.put(TO_RETURN)
             l.info('url_q.put(TO_RETURN)')
