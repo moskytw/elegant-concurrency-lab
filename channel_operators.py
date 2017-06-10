@@ -44,6 +44,9 @@ def put_text_q(run_q, url_q, text_q):
 
     while True:
 
+        # the below get and put should be synced
+        # but for the readability, keep as it is
+
         l.info(f'url_q: {url_q.qsize()}')
         url = url_q.get()
         l.info(f'url_q.get() -> {url}')
